@@ -1,0 +1,2061 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.34">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Zad Rafi">
+<meta name="dcterms.date" content="2018-12-29">
+<meta name="keywords" content="classical statistics, egon pearson, fisher, inverse probability, neyman and fisher, statistical methods for research workers">
+<meta name="description" content="A review of Erich Lehmann’s last book, Fisher, Neyman, and the Creation of Classical Statistics.">
+
+<title>Book Review: Fisher, Neyman, and the Creation of Classical Statistics – Less Likely</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 2em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-befe23ebd2f54d8af2c8a89d1a1611f1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-6f31dc0de0b27d6330ba5816b520976b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-851073aeef2233dc7fca7df9ea7de5a3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-6f31dc0de0b27d6330ba5816b520976b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": true,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Less Likely</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html#category=statistics"> 
+<span class="menu-text">Statistics</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/zadrafi"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/zadrafi"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../blog.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#a-very-brief-history-of-classical-statistics" id="toc-a-very-brief-history-of-classical-statistics" class="nav-link active" data-scroll-target="#a-very-brief-history-of-classical-statistics"><span class="header-section-number">1</span> A Very Brief History of Classical Statistics</a></li>
+  <li><a href="#where-are-the-bayesians" id="toc-where-are-the-bayesians" class="nav-link" data-scroll-target="#where-are-the-bayesians"><span class="header-section-number">2</span> Where Are The Bayesians?</a></li>
+  <li><a href="#fishers-contributions" id="toc-fishers-contributions" class="nav-link" data-scroll-target="#fishers-contributions"><span class="header-section-number">3</span> Fisher’s Contributions</a></li>
+  <li><a href="#neymans-contributions" id="toc-neymans-contributions" class="nav-link" data-scroll-target="#neymans-contributions"><span class="header-section-number">4</span> Neyman’s Contributions</a></li>
+  <li><a href="#the-fallout-between-the-creators-of-classical-statistics" id="toc-the-fallout-between-the-creators-of-classical-statistics" class="nav-link" data-scroll-target="#the-fallout-between-the-creators-of-classical-statistics"><span class="header-section-number">5</span> The Fallout Between The Creators Of Classical Statistics</a></li>
+  <li><a href="#there-is-no-one-neyman-nor-one-fisher" id="toc-there-is-no-one-neyman-nor-one-fisher" class="nav-link" data-scroll-target="#there-is-no-one-neyman-nor-one-fisher"><span class="header-section-number">6</span> There Is No One Neyman Nor One Fisher</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">7</span> References</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/zadrafi/lesslikely/edit/main/posts/statistics/classical-lehmann.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/zadrafi/lesslikely/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Book Review: Fisher, Neyman, and the Creation of Classical Statistics</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+<div>
+  <div class="description">
+    A review of Erich Lehmann’s last book, Fisher, Neyman, and the Creation of Classical Statistics.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Zad Rafi </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 29, 2018</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+<div>
+  <div class="keywords">
+    <div class="block-title">Keywords</div>
+    <p>classical statistics, egon pearson, fisher, inverse probability, neyman and fisher, statistical methods for research workers</p>
+  </div>
+</div>
+
+</header>
+
+
+<hr>
+<p>Erich Lehmann’s <a href="https://www.springer.com/us/book/9781441994998">last book</a>,[<span class="citation" data-cites="Lehmann2011-vs"><sup><a href="#ref-Lehmann2011-vs" role="doc-biblioref">1</a></sup></span>] which was published after his death, is on the history of classical statistics and its creators. Specifically, how his mentor Jerzy Neyman and his adversary Ronald Fisher helped lay the foundations for the methods that are used today in several fields.</p>
+<hr>
+<p><img src="https://res.cloudinary.com/less-likely/image/upload/f_auto,q_auto/v1554700110/Site/classicalgiants.png" alt="Picture of the giants who founded frequentist statistics such as Egon Pearson, Ronald Fisher, and Jerzy Neyman" style="width:80%"></p>
+<hr>
+<section id="a-very-brief-history-of-classical-statistics" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> A Very Brief History of Classical Statistics</h1>
+<hr>
+<p>This post is intended to be a general review/summary of the book, which I recommend to everyone and anyone who is interested in statistics and science. The book clears up several misconceptions people have about how frequentist statistics came to be the dominant school of statistics. Thus, I want to go over four topics from Lehmann’s book that I believe people should know more about:</p>
+<hr>
+<ul>
+<li><p>How the founders of classical statistics viewed Bayesian inference</p></li>
+<li><p>What they each developed</p></li>
+<li><p>How they came to become so conflicted</p></li>
+<li><p>And how their views changed over time</p></li>
+</ul>
+<hr>
+</section>
+<section id="where-are-the-bayesians" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Where Are The Bayesians?</h1>
+<hr>
+<p>As Stephen Senn points out in his <a href="https://www.youtube.com/watch?v=vJIc_9wzh6Y">Fisher Memorial Lecture</a> at the Royal Statistical Society, there is a common myth that everyone who practiced applied statistics before the early 20th century was using Bayesian inference and doing everything correctly, but then Fisher came in and created significance testing, thus giving researchers a powerful tool to easily hack their data and produce publishable results, and now we have several replication crises because of this.</p>
+<p>Of course, this is far from the truth and any thorough investigation into the history of statistics will clear up this up amongst many other misconceptions.</p>
+<p>As several individuals may know, it was Thomas Bayes who came up with Bayes theorem and it was Richard Price who disseminated most of his writings after Bayes’s death. However, as many self-identified Bayesians will attest, using Bayes’ theorem does not make one a Bayesian. It is actually quite hard to know how Bayes would react to modern Bayesian inference. The Bayesian inference that we are familiar with today can be attributed to Pierre-Simon Laplace, who popularized what is now known as “objective Bayes.”</p>
+<hr>
+<p><img src="https://res.cloudinary.com/less-likely/image/upload/f_auto,q_auto/v1554700141/Site/Pierre-Simon-Laplace_1749-1827.jpg" alt="Portrait of Pierre Simon Laplace" style="width:40%"></p>
+<hr>
+<p>Back then, it was not called “Bayesian inference” but was referred to as “inverse probability” and it was a method used by many before the dominance of classical statistics. So this is one part that common myths get right. Inverse probability did indeed have a moment in history before the dominance of frequentist statistics.</p>
+<p>Laplace, and several others popularized such methods, but around the end of the 19th century, the tides began to shift. Several mathematicians and statisticians began to discourage the use of inverse probability because they saw it as a nonrigorous method of data analysis.</p>
+<p>This can be seen in the following passages about Fisher.</p>
+<hr>
+<blockquote class="blockquote">
+<p>“His first publication on this new approach to inference was a 1930 paper”Inverse probability.” The paper begins with a critique of the inverse (Bayesian) method. This section ends with Fisher’s asking:</p>
+<p><strong>If, then, we follow writers like Boole, Venn and Chrystal in rejecting the inverse argument as devoid of foundation and incapable even of consistent application</strong>, how are we to avoid the staggering falsity of saying that however extensive our knowledge of the values of x may be, yet we know nothing and can know nothing about the values of <span class="math inline">\(\theta\)</span> ?” (78)</p>
+</blockquote>
+<hr>
+<p>Thus, Fisher was not the first to reject inverse probability, he was building on arguments from proto frequentists who already began to condemn inverse probability. Neyman was also a serious critic of inverse probability. In fact, he was probably more of a critic of it at a later point in time then Fisher (much on that later)!</p>
+<hr>
+<blockquote class="blockquote">
+<p>“On one subject, Fisher and Neyman agreed. Fisher, after 1922, and Neyman, after 1937, were <strong>united in their strong opposition to the use of prior distributions</strong> (unless they were <strong>based on substantial empirical evidence</strong>).” (90)</p>
+</blockquote>
+<hr>
+<p>Although the two giants of classical statistics both condemned inverse probability, it withstood their influential criticisms.</p>
+<hr>
+<blockquote class="blockquote">
+<p>“It seems ironic that one of the most significant developments after Fisher and Neyman had established their foundations was to rejuvenate an approach they both had strongly opposed and thought to have vanquished: inverse probability…</p>
+<p>The nineteenth century approach to inverse probability, championed particularly by Laplace, considered the prior distribution to represent complete ignorance. This concept, now called objective Bayes, was taken up and improved by the Cambridge geophysicist Harold Jeffreys, culminating in his 1939 book, “<em>Theory of Probability</em>.”</p>
+<p>A different Bayesian approach, called subjective, was proposed by Ramsey (1926) and Bruno de Finetti in the 1930s. It considered probability as a measure of a person’s subjective degree of uncertainty about a situation. This view came into its own with the publication in 1954 of L. J. Savage’s book, “<em>Foundations of Statistics</em>,” in which he derives the existence of such subjective probabilities from a few, quite plausible, axioms.” (91)</p>
+</blockquote>
+<hr>
+<p>Now that we have looked at how the founders of classical statistics viewed and attempted to discourage the use of inverse probability, we can move onto a brief summary of each of their individual contributions.</p>
+<hr>
+</section>
+<section id="fishers-contributions" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Fisher’s Contributions</h1>
+<hr>
+<p><img src="https://res.cloudinary.com/less-likely/image/upload/f_auto,q_auto/v1559517576/Site/fisher_old.jpg" alt="Picture of Ronald Fisher sitting and smoking" style="width:50%"></p>
+<hr>
+<p>Much of Fisher’s early work was a result of two individuals, Karl Pearson and William Gosset. Pearson’s work on the method of moments to estimate parameters led to Fisher developing his superior estimation method, maximum likelihood, which he presented in his 1922 foundations paper, “<em>On the mathematical foundations of theoretical statistics</em>.”</p>
+<hr>
+<blockquote class="blockquote">
+<p>“Having defined the problem of statistics to be the estimation of parameters, Fisher states the properties that he desires for his estimators. They are consistency, efficiency, and sufficiency…</p>
+<p>He then proposes what he had already suggested earlier in the section on <strong>the solution of the estimation problem, the method of maximum likelihood</strong>, which “consists, then, simply of choosing such values of these parameters as have the maximum likelihood.” Fisher believes that this method satisfies his three criteria, in particular that it satisfied the criterion of sufficiency, although he states that he “is not satisfied as to the mathematical rigor of any proof which I can put forward to that effect.” He also claims that sufficiency implies efficiency…</p>
+<p>Thus, in this paper Fisher has not only <strong>formulated the general problem of optimal estimation, but he has also provided a solution</strong>. It is a stunning achievement.” (10)</p>
+</blockquote>
+<hr>
+<p>Gosset’s initial work on test statistics, his inability derive proofs for small sample methods, and constant prodding led to Fisher developing several statistical tests which ended up being published in his highly influential book, <em>Statistical Methods For Research Workers</em>,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“For testing the value of a population mean, it had been customary to use a statistic equivalent to what today is called Student’s t, and to refer to the normal distribution. For large samples, this provided a good approximation.</p>
+<p>However, Gosset soon realized that for <strong>the small samples with which he had to work, the approximation was inadequate</strong>. He then had the crucial insight that exact results could be obtained by making an additional assumption, namely that the form of the distribution of the observations is known. Gosset undertook to determine it for the case that the underlying distribution is normal, and he obtained the correct result, although he was not able to give a rigorous proof.</p>
+<p>The first proof was obtained (although not published) by Fisher in 1912. His proof was finally published in 1915 [4], together with the corresponding proof for the correlation coefficient that Student had conjectured in a second paper of 1908(b). Fisher followed this in 1921 [14] with a derivation of the distribution of the intraclass correlation coefficient. And then, as a result of constant prodding and urging by Gosset, he found a number of additional small-sample distributions, and in 1925 presented the totality of these results in his book, <em>“Statistical Methods for Research Workers.”</em> (6)</p>
+</blockquote>
+<hr>
+<p>In the book, Fisher’s main focus was on statistical testing and not estimation, and he made this clear,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“…the prime object of this book is to put into the hands of research workers… <strong>the means of applying statistical tests accurately to numerical data accumulated in their own laboratories</strong> … and later refers to the exact distributions with the use of which this book is chiefly concerned… Thus, the book does not primarily deal with estimation but with significance testing. In fact, estimation is never again mentioned.” (16)</p>
+</blockquote>
+<hr>
+<p>His section about chi-squared tests and significance testing became highly influential,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“<strong>In preparing this table we have borne in mind that in practice we do not want to know the exact value of P for any observed</strong> <span class="math inline">\(\chi{2}\)</span>, but, in the first place, whether or not the observed value is open to suspicion. If P is between .1 and .9 there is certainly no reason to suspect the hypothesis tested. If it is below .02 it is strongly indicated that the hypothesis fails to account for the whole of the facts. <strong>We shall not often be astray if we draw a conventional line at .05 and consider that higher values of</strong> <span class="math inline">\(\chi{2}\)</span> indicate a real discrepancy.” (17)</p>
+</blockquote>
+<hr>
+<p>He also presents examples,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“In the first of these, in particular, he finds a p-value between 0.01 and 0.02 and concludes:”If we take P = 0.05 as the limit of significant deviation, <strong>we shall say that in this case the deviations from expectation are significant</strong>.” (17)</p>
+</blockquote>
+<hr>
+<p>And he expanded on significance testing with analysis of variance, which he had derived while working at Rothamsted analyzing crop data. The book was a large success,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“The first edition of 1,050 copies was sold out after three years, and the second edition of 1,250 copies in another two. Every two to three years necessitated a new edition, which usually contained some improvements and often additions. The size of the editions steadily increased and the eleventh edition of 1950 ran to 7,500 copies. The last edition, the fourteenth, was published posthumously in 1970 from notes Fisher had prepared before his death in 1962.” (25)</p>
+</blockquote>
+<hr>
+<p>And set the groundwork for his next task, discussing experimental methods, which would be published in his second book, <em>The Design of Experiments</em>. In it, he discusses how techniques like randomization were necessary for the validity of statistical tests and how they perform amongst a wide variety of distributions,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“Randomisation properly carried out … ensures that the estimates of error will take proper care of all such causes of different growth rates, and <strong>relieves the experimenter from the anxiety of considering and estimating the magnitude of the innumerable causes by which his data may be disturbed.</strong> The one flaw in Darwin’s procedure was the absence of randomisation…</p>
+<p>It seems to have escaped recognition that the physical act of randomisation which, as has been shown, is necessary for the validity of any test of significance, affords the means, in respect of any particular body of data, of examining the wider hypothesis <strong>in which no normality of distribution is implied</strong>.” (66)</p>
+</blockquote>
+<hr>
+<p>Although he had proposed randomization tests as a way of dealing with nonnormal distributions, due to their tedious calculations, they never became popular at the time. The book also touched on several other concepts such as randomized blocks, Latin squares, and factorial designs. He also made his position very clear on significance tests and the null hypothesis,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“By increasing the size of the experiment, we can render it more sensitive, meaning by this that it will allow of the detection of a lower degree of sensory discrimination… . <strong>Since in every case the experiment is capable of disproving, but never of proving this hypothesis</strong>, we may say that the value of the experiment is increased whenever it permits the null hypothesis to be more readily disproved.” (64)</p>
+</blockquote>
+<hr>
+<p>Here we can see Fisher’s concept of statistical power, though “sensitivity” was never a quantified concept. He also clearly states his position on the null hypothesis, that we can never accept it, <a href="../../../statistics/evidence-of-absence">a mistake that many researchers continue to make today</a>.</p>
+<p>Now that we have discussed some of Fisher’s contributions to classical statistics, we can discuss the contributions of Jerzy Neyman.</p>
+<hr>
+</section>
+<section id="neymans-contributions" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Neyman’s Contributions</h1>
+<hr>
+<p><img src="https://res.cloudinary.com/less-likely/image/upload/f_auto,q_auto/v1554700127/Site/Jerzy_Neyman.jpg" alt="Photo of Jerzy Neyman and his colleagues" style="width:40%"></p>
+<hr>
+<p>Just like Fisher, Neyman was also impacted by Gosset. However, the influence was indirect. In the 1920s, Egon Pearson, had come across the small-sample tests that both Fisher and Gosset had popularized and had the realization that he must make a name for himself if he ever wished to be free of his father’s influence.</p>
+<hr>
+<blockquote class="blockquote">
+<p>“In 1925-6, I was in a state of puzzlement, and realized that, <strong>if I was to continue an academic career as a mathematical statistician</strong>, <strong>I must construct for myself what might be termed a statistical philosophy</strong>, which would have to combine what I accepted from K. P.’s large- sample tradition with the newer ideas of Fisher.” (7)</p>
+</blockquote>
+<hr>
+<p>Thus, he contacted Gosset about practical usage of the t-test, to which Gosset replied,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“Even if the chance is very small, say .00001, that doesn’t in itself necessarily prove that the sample is not drawn randomly from the population [specified by the hypothesis]; <strong>what it does is to show that if there is any alternative hypothesis</strong> which will explain the occurrence of the sample with a more reasonable probability, say .05 (such as that it belongs to a different population or that the sample wasn’t random or whatever will do the trick), you will be very much more inclined to consider that the original hypothesis is not true.” (E. S. Pearson, 1939.)</p>
+<p>“In his obituary of Gosset, Pearson continues, Gosset’s reply had a tremendous influence on the direction of my subsequent work, for the first paragraph contains the germ of that idea which has formed the basis of all the later joint researches of Neyman and myself. It is the simple suggestion that the only valid reason for rejecting a statistical hypothesis is that <strong>some alternative explains the observed events with a greater degree of probability</strong>.” (7)</p>
+</blockquote>
+<hr>
+<p>As a result, Pearson decided to collaborate with someone who was not taught by his father, but who also had the mathematical abilities to create a generalizable theorem that he had in mind. Thus, began the collaboration between Neyman and Pearson.</p>
+<p>In 1928, they published a paper in <em>Biometrika</em> titled, <em>“On the use and interpretation of certain test criteria,”</em> where they introduced two kinds of errors,</p>
+<hr>
+<blockquote class="blockquote">
+<ol type="1">
+<li><p>Sometimes,when hypothesis A is rejected, <span class="math inline">\(\Sigma\)</span> will in fact have been drawn from <span class="math inline">\(\Pi\)</span>.</p></li>
+<li><p>More often, in accepting hypothesis A, <span class="math inline">\(\Sigma\)</span> will really have been drawn from [some alternative population] <span class="math inline">\(\Pi\)</span>. (31)</p></li>
+</ol>
+</blockquote>
+<hr>
+<p>As Lehmann notes, the paper was a great achievement,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“It introduces the consideration of alternatives, the two kinds of error, and the distinction between simple and composite hypotheses. In addition, of course, it proposes the likelihood ratio test. This test is intuitively appealing, and Neyman and Pearson show that in a number of important cases it leads to very satisfactory solutions. It has become the standard approach to new testing problems.” (34)</p>
+<p>But the Neyman-Pearson lemma was still incomplete. It was between the years of 1930 and 1933 that Neyman had several insights into how to improve the theory, which Pearson already had felt satisfied with.</p>
+<p>“In the next letter, dated March 8, Neyman suggests that he and Egon must”fix a certain plan, as we have lot of problems already started and then left in the wood.” He lists several such problems, among them: to finish what I have started to do with the variation calculus. You will understand it in a moment.</p>
+<p>To reduce for a given level the errors of rejecting a true hypothesis, we may use any test. Now we want to find a test which would 1) <strong>reduce the probability of rejecting a true hypothesis to the level</strong> <span class="math inline">\(\leq \varepsilon\)</span> and 2) <strong>such that the probability of accepting a false hypothesis should be minimum</strong>. – We find that if such a test exists, then <strong>it is the</strong> <span class="math inline">\(\lambda\)</span>-test. I am now shure [sic] that in a few days I shall be ready. This will show that the “<span class="math inline">\(\lambda\)</span> principle” is not only a principle but that <strong>there are arguments to prove that it is really “the best test</strong>.”” (35)</p>
+</blockquote>
+<hr>
+<p>These correspondences led to their 1933 paper,</p>
+<p><em>“On the Problem of the Most Efficient Tests of Statistical Hypotheses.”</em> in which both authors introduce the novel idea of behavioral guidance,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“Without hoping to know whether each separate hypothesis is true or false, <strong>we may search for rules to govern our behavior</strong> with regard to them, in following which we insure that, in the long run of experience, <strong>we shall not be too often wrong</strong>.” (36)</p>
+</blockquote>
+<hr>
+<p>As Lehmann notes,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“After outlining the general theory, the paper in the next section deals with the case of simple hypotheses and brings the statement and proof of the basic result, now known as the <strong>Neyman-Pearson Fundamental Lemma</strong>. It states that for testing a simple hypothesis against a simple alternative, <strong>the test that at a given level maximizes the probability of rejection is the likelihood ratio test at that level</strong>.” (36)</p>
+</blockquote>
+<hr>
+<p>Lehmann summarizes much of the collaboration with the following,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“The collaboration falls into two quite distinct parts. In the early stages, the important ideas, including in particular that of the likelihood ratio principle, all come from Pearson. In fact, Neyman frequency misunderstands them, and continually tries to interpret them in terms of inverse probability.</p>
+<p>On the other hand, Pearson is sold on the likelihood ratio principle, which is intuitively appealing and which seems to give reasonable solutions in the cases on which they try it out. But for Neyman, as he is gradually catching on, intuitive appeal is not enough. If the principle is really as good as it appears to be, there ought to be logical justification.</p>
+<p>And then one day in early 1930, he sees the light. Since there are two sources of error, one of which is being controlled, the best test is the one minimizing the other one. And from then on, it is Neyman who has the new ideas and Pearson is the reluctant follower. Neyman formulates, and shortly thereafter proves, the Fundamental Lemma and realizes that in some special cases there exist what they later call uniformly most powerful tests. These turn out to coincide with the likelihood ratio tests.” (39)</p>
+</blockquote>
+<hr>
+</section>
+<section id="the-fallout-between-the-creators-of-classical-statistics" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> The Fallout Between The Creators Of Classical Statistics</h1>
+<hr>
+<p>The conflict between Neyman and Fisher is well known, however, very few are able to accurately point out what lead to each individual strongly detesting the other.</p>
+<p>In fact, early correspondences between Neyman and Fisher showed that they were incredibly friendly towards one another. In 1932, Neyman asked Fisher to review their 1933 paper before they submitted it, to which Fisher replied,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“I should be very much interested to see your paper on”the best tests,” as the whole question of tests of significance seems to me to be of immense philosophical importance, and the work you showed me was surely of great promise. It is quite probable that if the work is submitted to the Royal Society, I might be asked to act as referee, and in that case I shall certainly not refuse.” (45)</p>
+</blockquote>
+<hr>
+<p>Fisher not only read the paper, but read it so carefully that he was able to catch a mathematical error and point it out to Neyman and Pearson before it was published,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“When the paper appeared in 1933, the omission was corrected, and a footnote acknowledged that,”We are indebted to Dr.&nbsp;R. A. Fisher – for kindly calling our attention to the fact that we had originally omitted to refer to this restriction.” (46)</p>
+</blockquote>
+<hr>
+<p>Neyman thanked Fisher for his help,</p>
+<hr>
+<blockquote class="blockquote">
+<p>Neyman: “Pearson writes that you have recommended our paper for publication. Although it maybe considered ridiculous to thank a judge, I have intense feeling of gratefulness, which I hope you will kindly accept…” (57)</p>
+<p>Fisher replies, “It was a great pleasure to hear from you again.” (57)</p>
+<p>Neyman: “I am often thinking that it would be very useful for me to work with you. Unfortunately, this requires considerable amount of money – without speaking of your consent – of course…” (57)</p>
+<p>Fisher answers, “You may be sure of my consent,” and in the next letter, “I like hearing from Poland. Best wishes for a Merry Christmas.” (58)</p>
+</blockquote>
+<hr>
+<p>Unfortunately, their relationship began to degrade after the retirement of Karl Pearson. The department of applied statistics that he was the head of was split into the department of statistics, which would be led by his son Egon, and the department of genetics, where Fisher was appointed as Galton professor. Thus, Fisher, one of the creators of classical statistics, was not allowed to teach statistics, while in the floor downstairs, Egon Pearson (a man that he was surely not fond of) was leading the new statistics department.</p>
+<p>This change in tone could be seen by the correspondence between Neyman and Fisher following Fisher’s appointment as Galton professor,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“Dr.&nbsp;Pearson writes me that soon you will be Galton Professor at the University College, London. Very probably <strong>this means a general reorganization of the Department of Applied Statistics and possibly new people will be needed</strong>. I know that there are many statisticians in England and that many of them would be willing to work under you. But improbable things do happen sometimes and you may have a vacant position in your laboratory. In that case please consider whether I can be of any use.” (58)</p>
+</blockquote>
+<hr>
+<p>Fisher replies,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“Many thanks for your letter of congratulation. You will be interested to hear that the <strong>Dept. of Statistics has now been separated officially from the Galton Laboratory</strong>. I think Egon Pearson is designated as Reader in Statistics. This arrangement will be much laughed at, but it will be rather a poor joke, I fancy, for both Pearson and myself. I think, however, we will make the best of it.</p>
+<p><strong>I shall not lecture on statistics, but probably on “the logic of experimentation,</strong>” so that my lectures will not be troubled by students who cannot see through a wire fence. I wish I had a fine place for you, but it will be long before my new department can be given any sort of unity and coherence, and you will be head of a faculty before I shall be able to get much done. <strong>If in England, do not fail to see me at University College</strong>.” (58)</p>
+</blockquote>
+<hr>
+<p>Of course, there is little doubt that both Karl and Egon Pearson contributed to the fallout between Neyman and Fisher. In 1929, Egon Pearson had submitted a critical review of the second edition of <em>Statistical Methods For Research Workers</em> to <em>Nature</em>,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“There is one criticism, however, which must be made from the statistical point of view. A large number of the tests developed are based…on the assumption that the population sampled is of the”normal” form. That this is the case may be gathered from a careful reading of the text, but the point is not sufficiently emphasized.</p>
+<p>It does not appear reasonable to lay stress on the “exactness” of the tests when no means whatever are given of appreciating how rapidly they become inexact as the population sampled diverges from normality. That the tests, for example, connected with the analysis of variance are far more dependent on normality than those involving Student’s z (or t) distribution is almost certain, but no clear indication of the need for caution in their application is given.” (22)</p>
+</blockquote>
+<hr>
+<p>As Lehmann points out, Fisher was deeply offended by this review. Nearly six years later (1935), Neyman encountered a similar reaction when he submitted a paper titled, “Statistical problems in agricultural experimentation” pointing out problems with some of the concepts that Fisher had introduced in his book, <em>The Design of Experiments</em>. Fisher was furious,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“I had hoped that Dr.&nbsp;Neyman’s paper would be on a subject with which the author was fully acquainted, and on which he could speak with authority, as in the case of his address to the Society delivered last summer. Since seeing the paper, <strong>I have come to the conclusion that Dr.&nbsp;Neyman had been somewhat unwise in his choice of topics</strong>… (59)</p>
+<p>Were it not for the persistent effort which Dr.&nbsp;Neyman and Dr.&nbsp;Pearson had made to treat what they speak of as problems of estimation, by means merely of tests of significance, I have no doubt that Dr.&nbsp;Neyman would not have been in any danger of falling into the series of misunderstandings which his paper revealed.” (59)</p>
+</blockquote>
+<hr>
+<p>Correspondences from there on out had become hostile,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“Neyman later (Reid 1982, p.&nbsp;126) recalls that a week after this meeting, Fisher stopped by his room at University College:</p>
+<p>And he said to me that he and I are in the same building… . That, as I know, he had published a book – and that’s Statistical Methods for Research Workers – and he is upstairs from me so he knows something about my lectures – that from time to time I mention his ideas, this and that – and that this would be quite appropriate if I were not here in the College but, say, in California – but if I am going to be at University College, then this is not acceptable to him.</p>
+<p><strong>And then I said, “<em>Do you mean that if I am here, I should just lecture using your book</em>?” And then he gave an affirmative answer. And I said, “<em>Sorry, no. I cannot promise that</em>.” And then he said, “<em>Well, if so, then from now on I shall oppose you in all my capacities</em>.”</strong></p>
+<p>Reid also reports (p.&nbsp;124) that, After the Royal Statistical Society meeting of March 28, relations between workers on the two floors of K. P.’s old preserve became openly hostile. One evening, late that spring, Neyman and Pearson returned to their department after dinner to do some work.</p>
+<p>Entering, they were startled to find <strong>strewn on the floor the wooden models which Neyman had used to illustrate his talk on the relative advantages of randomized blocks and Latin squares</strong>. They were regularly kept in a cupboard in the laboratory. Both Neyman and Pearson always believed that the models were removed by Fisher in a fit of anger.” (59)</p>
+</blockquote>
+<hr>
+</section>
+<section id="there-is-no-one-neyman-nor-one-fisher" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> There Is No One Neyman Nor One Fisher</h1>
+<hr>
+<p>When Fisher released his first edition of <em>Statistical Methods For Research Workers</em> (SMRW), he recommended 5% or 1% as good choices for significance levels, with the latter being used when a “more stringent requirement was necessary.” Fisher was also not interested in exact P-values as pointed out in the section discussing his contributions.</p>
+<p>Many of these views changed as he released later editions of his SMRW and his new book, <em>Statistical Methods for Scientific Inference</em> (SMSI). For example, he no longer recommended a particular level of significance,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“In his late, 1956, book SMSI, Fisher protested that”<strong>no scientific worker has a fixed level of significance at which from year to year, and in all circumstances, he rejects hypotheses; he rather gives his mind to each particular case, and his ideas</strong>” (52)</p>
+</blockquote>
+<hr>
+<p>In the 13th edition of SMRW he stated,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“<strong>The actual value of P obtainable from the table by interpolation indicates the strength of the evidence against the hypothesis</strong>. A value of <span class="math inline">\(\chi{2}\)</span> exceeding the 5 per cent. point is seldom to be disregarded.” (52)</p>
+</blockquote>
+<hr>
+<p>Thus, Fisher had changed his mind on the topic.</p>
+<p>Neyman too had a significant change of mind during the course of his collaboration with Pearson. At first, he constantly defaulted to inverse probability methods, as noted by Pearson’s letter to him in 1978,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“I have eight letters which you wrote to me during February and March 1929, trying to persuade me to put my name as a joint author. But you had introduced an a priori law of probability…, and I was not willing to start from this basis. True we had given the inverse probability as an alternative approach in our 1928 Part I paper, but I must in 1927-28 still have been ready to concede to your line of thought.</p>
+<p>However, <strong>by 1929 I had come down firmly to agree with Fisher that prior distributions should not be used</strong>, except in cases where they were based on real knowledge, e.g., in some Mendelian problems. <strong>You were disappointed, but accepted my decision</strong>; after all, the whole mathematical development in the paper was yours.” (42)</p>
+</blockquote>
+<hr>
+<p>Though eventually Neyman abandoned his interest in inverse probability and became a serious critic,</p>
+<hr>
+<blockquote class="blockquote">
+<p>“His conviction of the inapplicability of the inverse method had by then become a fundamental part of his statistical philosophy, <strong>from which he never wavered</strong>.” (42)</p>
+</blockquote>
+<hr>
+<p>Although this post is mainly fixated on the book by Lehmann, I would like to at least paste this one relevant passage from <a href="https://www.jstor.org/stable/23736900">Hulbert &amp; Lombardi, 2009</a>,[<span class="citation" data-cites="Hurlbert2009-ks"><sup><a href="#ref-Hurlbert2009-ks" role="doc-biblioref">2</a></sup></span>]</p>
+<hr>
+<blockquote class="blockquote">
+<p>“In a later philosophical essay, Neyman (1977: 112) recounted their cloud-seeding studies, and labeled P values of 0.09, 0.03, and &lt; 0.01 reported in their earlier paper (Lovasich et al.&nbsp;1971), as”approximately significant,” “significant,” and “highly significant,” respectively. The dichotomies of the paleoFisherian and Neyman-Pearsonian frameworks were quietly admitted to be less appropriate than more nebulous interpretations — at least in cloud work!</p>
+<p>Indeed, Cox (2006a: 43, 195) has noted that “the differences between Fisher and Neyman … were not nearly as great as the asperity of the arguments between them might suggest … [and in] actual practice … Neyman … often reported p-values whereas some of Fisher’s use of tests … was much more dichotomous”!</p>
+</blockquote>
+<hr>
+<p>As we can see from a summary of Lehmann’s book, the individuals who founded classical statistics were skilled and talented individuals who were also complex and had various reasons for doing what they did. I hope this blog post encourages readers to fully dive into Lehmann’s book where he gives a far more detailed account of Fisher and Neyman’s contributions to classical statistics.</p>
+<hr>
+</section>
+<section id="references" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> References</h1>
+<hr>
+
+
+<!-- -->
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="2" data-line-spacing="2" role="list">
+<div id="ref-Lehmann2011-vs" class="csl-entry" role="listitem">
+1. Lehmann EL. (2011). <span>“Fisher, <span>Neyman</span>, and the <span>Creation</span> of <span>Classical Statistics</span>.”</span> <span>Springer New York</span>. doi: <a href="https://doi.org/10.1007/978-1-4419-9500-1">10.1007/978-1-4419-9500-1</a>.
+</div>
+<div id="ref-Hurlbert2009-ks" class="csl-entry" role="listitem">
+2. Hurlbert SH, Lombardi CM. (2009). <span>“Final collapse of the <span>Neyman</span>-<span>Pearson</span> decision theoretic framework and rise of the <span class="nocase">neoFisherian</span>.”</span> <em>Ann Zool Fennici</em>. <strong>46</strong>:311–349. doi: <a href="https://doi.org/10.5735/086.046.0501">10.5735/086.046.0501</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/lesslikely\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+            // default icon
+            link.classList.add("external");
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">layout:</span><span class="co"> post</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> 'Book Review: Fisher, Neyman, and the Creation of Classical Statistics'</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Zad Rafi</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2018-12-30T00:00:00.000Z</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">lastmod:</span><span class="co"> 2019-03-30T00:00:00.000Z</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> &gt;-</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">  A review of Erich Lehmann's last book, Fisher, Neyman, and the Creation of</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">  Classical Statistics.</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="an">archives:</span><span class="co"> statistics</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="an">slug:</span><span class="co"> classical-lehmann</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="an">url:</span><span class="co"> statistics/classical-lehmann</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> &gt;-</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">  https://res.cloudinary.com/less-likely/image/upload/f_auto,q_auto/v1559517576/Site/fisher_old.jpg</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="an">og_image:</span><span class="co"> &gt;-</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">  https://res.cloudinary.com/less-likely/image/upload/f_auto,q_auto/v1559517576/Site/fisher_old.jpg</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="an">zotero:</span><span class="co"> true</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"> </span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="an">tags:</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">  - review</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">  - fisher</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">  - math</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">  - power</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="an">keywords:</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">  - classical statistics</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">  - egon pearson</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co">  - fisher</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co">  - inverse probability</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">  - neyman and fisher</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">  - statistical methods for research workers</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co">  blogdown::html_page:</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>Erich Lehmann's [last</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>book](https://www.springer.com/us/book/9781441994998),<span class="sc">\[</span>@Lehmann2011-vs<span class="sc">\]</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>which was published after his death, is on the history of classical</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>statistics and its creators. Specifically, how his mentor Jerzy Neyman</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>and his adversary Ronald Fisher helped lay the foundations for the</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>methods that are used today in several fields.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://res.cloudinary.com/less-likely/image/upload/f_auto,q_auto/v1554700110/Site/classicalgiants.png"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"Picture of the giants who founded frequentist statistics such as Egon Pearson, Ronald Fisher, and Jerzy Neyman"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"width:80%"</span><span class="dt">/&gt;</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu"># A Very Brief History of Classical Statistics</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>This post is intended to be a general review/summary of the book, which</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>I recommend to everyone and anyone who is interested in statistics and</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>science. The book clears up several misconceptions people have about how</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>frequentist statistics came to be the dominant school of statistics.</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>Thus, I want to go over four topics from Lehmann's book that I believe</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>people should know more about:</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>How the founders of classical statistics viewed Bayesian inference</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>What they each developed</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>How they came to become so conflicted</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>And how their views changed over time</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="fu"># Where Are The Bayesians?</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>As Stephen Senn points out in his [Fisher Memorial</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>Lecture](https://www.youtube.com/watch?v=vJIc_9wzh6Y) at the Royal</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>Statistical Society, there is a common myth that everyone who practiced</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>applied statistics before the early 20th century was using Bayesian</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>inference and doing everything correctly, but then Fisher came in and</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>created significance testing, thus giving researchers a powerful tool to</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>easily hack their data and produce publishable results, and now we have</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>several replication crises because of this.</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>Of course, this is far from the truth and any thorough investigation</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>into the history of statistics will clear up this up amongst many other</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>misconceptions.</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>As several individuals may know, it was Thomas Bayes who came up with</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>Bayes theorem and it was Richard Price who disseminated most of his</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>writings after Bayes's death. However, as many self-identified Bayesians</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>will attest, using Bayes' theorem does not make one a Bayesian. It is</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>actually quite hard to know how Bayes would react to modern Bayesian</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>inference. The Bayesian inference that we are familiar with today can be</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>attributed to Pierre-Simon Laplace, who popularized what is now known as</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>"objective Bayes."</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://res.cloudinary.com/less-likely/image/upload/f_auto,q_auto/v1554700141/Site/Pierre-Simon-Laplace_1749-1827.jpg"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"Portrait of Pierre Simon Laplace"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"width:40%"</span><span class="dt">/&gt;</span></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>Back then, it was not called "Bayesian inference" but was referred to as</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>"inverse probability" and it was a method used by many before the</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>dominance of classical statistics. So this is one part that common myths</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>get right. Inverse probability did indeed have a moment in history</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>before the dominance of frequentist statistics.</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>Laplace, and several others popularized such methods, but around the end</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>of the 19th century, the tides began to shift. Several mathematicians</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>and statisticians began to discourage the use of inverse probability</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>because they saw it as a nonrigorous method of data analysis.</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>This can be seen in the following passages about Fisher.</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "His first publication on this new approach to inference was a 1930</span></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; paper "Inverse probability." The paper begins with a critique of the</span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; inverse (Bayesian) method. This section ends with Fisher's asking:</span></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **If, then, we follow writers like Boole, Venn and Chrystal in</span></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; rejecting the inverse argument as devoid of foundation and incapable</span></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; even of consistent application**, how are we to avoid the staggering</span></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; falsity of saying that however extensive our knowledge of the values</span></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; of x may be, yet we know nothing and can know nothing about the values</span></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; of $\theta$ ?" (78)</span></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>Thus, Fisher was not the first to reject inverse probability, he was</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>building on arguments from proto frequentists who already began to</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>condemn inverse probability. Neyman was also a serious critic of inverse</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>probability. In fact, he was probably more of a critic of it at a later</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>point in time then Fisher (much on that later)!</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "On one subject, Fisher and Neyman agreed. Fisher, after 1922, and</span></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Neyman, after 1937, were **united in their strong opposition to the</span></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; use of prior distributions** (unless they were **based on substantial</span></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; empirical evidence**)." (90)</span></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>Although the two giants of classical statistics both condemned inverse</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>probability, it withstood their influential criticisms.</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "It seems ironic that one of the most significant developments after</span></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Fisher and Neyman had established their foundations was to rejuvenate</span></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; an approach they both had strongly opposed and thought to have</span></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; vanquished: inverse probability...</span></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; The nineteenth century approach to inverse probability, championed</span></span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; particularly by Laplace, considered the prior distribution to</span></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; represent complete ignorance. This concept, now called objective</span></span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Bayes, was taken up and improved by the Cambridge geophysicist Harold</span></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Jeffreys, culminating in his 1939 book, "*Theory of Probability*."</span></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; A different Bayesian approach, called subjective, was proposed by</span></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Ramsey (1926) and Bruno de Finetti in the 1930s. It considered</span></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; probability as a measure of a person's subjective degree of</span></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; uncertainty about a situation. This view came into its own with the</span></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; publication in 1954 of L. J. Savage's book, "*Foundations of</span></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Statistics*," in which he derives the existence of such subjective</span></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; probabilities from a few, quite plausible, axioms." (91)</span></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>Now that we have looked at how the founders of classical statistics</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>viewed and attempted to discourage the use of inverse probability, we</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>can move onto a brief summary of each of their individual contributions.</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a><span class="fu"># Fisher's Contributions</span></span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://res.cloudinary.com/less-likely/image/upload/f_auto,q_auto/v1559517576/Site/fisher_old.jpg"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"Picture of Ronald Fisher sitting and smoking"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"width:50%"</span><span class="dt">/&gt;</span></span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>Much of Fisher's early work was a result of two individuals, Karl</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>Pearson and William Gosset. Pearson's work on the method of moments to</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>estimate parameters led to Fisher developing his superior estimation</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>method, maximum likelihood, which he presented in his 1922 foundations</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>paper, "*On the mathematical foundations of theoretical statistics*."</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "Having defined the problem of statistics to be the estimation of</span></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; parameters, Fisher states the properties that he desires for his</span></span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; estimators. They are consistency, efficiency, and sufficiency...</span></span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; He then proposes what he had already suggested earlier in the section</span></span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; on **the solution of the estimation problem, the method of maximum</span></span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; likelihood**, which "consists, then, simply of choosing such values of</span></span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; these parameters as have the maximum likelihood." Fisher believes that</span></span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; this method satisfies his three criteria, in particular that it</span></span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; satisfied the criterion of sufficiency, although he states that he "is</span></span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; not satisfied as to the mathematical rigor of any proof which I can</span></span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; put forward to that effect." He also claims that sufficiency implies</span></span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; efficiency...</span></span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Thus, in this paper Fisher has not only **formulated the general</span></span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; problem of optimal estimation, but he has also provided a solution**.</span></span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; It is a stunning achievement." (10)</span></span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>Gosset's initial work on test statistics, his inability derive proofs</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>for small sample methods, and constant prodding led to Fisher developing</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>several statistical tests which ended up being published in his highly</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>influential book, *Statistical Methods For Research Workers*,</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "For testing the value of a population mean, it had been customary to</span></span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; use a statistic equivalent to what today is called Student's t, and to</span></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; refer to the normal distribution. For large samples, this provided a</span></span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; good approximation.</span></span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; However, Gosset soon realized that for **the small samples with which</span></span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; he had to work, the approximation was inadequate**. He then had the</span></span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; crucial insight that exact results could be obtained by making an</span></span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; additional assumption, namely that the form of the distribution of the</span></span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; observations is known. Gosset undertook to determine it for the case</span></span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; that the underlying distribution is normal, and he obtained the</span></span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; correct result, although he was not able to give a rigorous proof.</span></span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; The first proof was obtained (although not published) by Fisher in</span></span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; 1912. His proof was finally published in 1915 </span><span class="sc">\[</span><span class="at">4</span><span class="sc">\]</span><span class="at">, together with the</span></span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; corresponding proof for the correlation coefficient that Student had</span></span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; conjectured in a second paper of 1908(b). Fisher followed this in 1921</span></span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; </span><span class="sc">\[</span><span class="at">14</span><span class="sc">\]</span><span class="at"> with a derivation of the distribution of the intraclass</span></span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; correlation coefficient. And then, as a result of constant prodding</span></span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; and urging by Gosset, he found a number of additional small-sample</span></span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; distributions, and in 1925 presented the totality of these results in</span></span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; his book, *"Statistical Methods for Research Workers."* (6)</span></span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>In the book, Fisher's main focus was on statistical testing and not</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>estimation, and he made this clear,</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "...the prime object of this book is to put into the hands of research</span></span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; workers... **the means of applying statistical tests accurately to</span></span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; numerical data accumulated in their own laboratories** ... and later</span></span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; refers to the exact distributions with the use of which this book is</span></span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; chiefly concerned... Thus, the book does not primarily deal with</span></span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; estimation but with significance testing. In fact, estimation is never</span></span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; again mentioned." (16)</span></span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>His section about chi-squared tests and significance testing became</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>highly influential,</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "**In preparing this table we have borne in mind that in practice we</span></span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; do not want to know the exact value of P for any observed** $\chi{2}$,</span></span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; but, in the first place, whether or not the observed value is open to</span></span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; suspicion. If P is between .1 and .9 there is certainly no reason to</span></span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; suspect the hypothesis tested. If it is below .02 it is strongly</span></span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; indicated that the hypothesis fails to account for the whole of the</span></span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; facts. **We shall not often be astray if we draw a conventional line</span></span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; at .05 and consider that higher values of** $\chi{2}$ indicate a real</span></span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; discrepancy." (17)</span></span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>He also presents examples,</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "In the first of these, in particular, he finds a p-value between 0.01</span></span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; and 0.02 and concludes: "If we take P = 0.05 as the limit of</span></span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; significant deviation, **we shall say that in this case the deviations</span></span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; from expectation are significant**." (17)</span></span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>And he expanded on significance testing with analysis of variance, which</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>he had derived while working at Rothamsted analyzing crop data. The book</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>was a large success,</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "The first edition of 1,050 copies was sold out after three years, and</span></span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; the second edition of 1,250 copies in another two. Every two to three</span></span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; years necessitated a new edition, which usually contained some</span></span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; improvements and often additions. The size of the editions steadily</span></span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; increased and the eleventh edition of 1950 ran to 7,500 copies. The</span></span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; last edition, the fourteenth, was published posthumously in 1970 from</span></span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; notes Fisher had prepared before his death in 1962." (25)</span></span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>And set the groundwork for his next task, discussing experimental</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>methods, which would be published in his second book, *The Design of</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>Experiments*. In it, he discusses how techniques like randomization were</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>necessary for the validity of statistical tests and how they perform</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>amongst a wide variety of distributions,</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "Randomisation properly carried out ... ensures that the estimates of</span></span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; error will take proper care of all such causes of different growth</span></span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; rates, and **relieves the experimenter from the anxiety of considering</span></span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; and estimating the magnitude of the innumerable causes by which his</span></span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; data may be disturbed.** The one flaw in Darwin's procedure was the</span></span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; absence of randomisation...</span></span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; It seems to have escaped recognition that the physical act of</span></span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; randomisation which, as has been shown, is necessary for the validity</span></span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; of any test of significance, affords the means, in respect of any</span></span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; particular body of data, of examining the wider hypothesis **in which</span></span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; no normality of distribution is implied**." (66)</span></span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>Although he had proposed randomization tests as a way of dealing with</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>nonnormal distributions, due to their tedious calculations, they never</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>became popular at the time. The book also touched on several other</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>concepts such as randomized blocks, Latin squares, and factorial</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>designs. He also made his position very clear on significance tests and</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>the null hypothesis,</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "By increasing the size of the experiment, we can render it more</span></span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; sensitive, meaning by this that it will allow of the detection of a</span></span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; lower degree of sensory discrimination... . **Since in every case the</span></span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; experiment is capable of disproving, but never of proving this</span></span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; hypothesis**, we may say that the value of the experiment is increased</span></span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; whenever it permits the null hypothesis to be more readily disproved."</span></span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; (64)</span></span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>Here we can see Fisher's concept of statistical power, though</span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>"sensitivity" was never a quantified concept. He also clearly states his</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>position on the null hypothesis, that we can never accept it, [a mistake</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>that many researchers continue to make</span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>today](../../../statistics/evidence-of-absence).</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>Now that we have discussed some of Fisher's contributions to classical</span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>statistics, we can discuss the contributions of Jerzy Neyman.</span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a><span class="fu"># Neyman's Contributions</span></span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://res.cloudinary.com/less-likely/image/upload/f_auto,q_auto/v1554700127/Site/Jerzy_Neyman.jpg"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"Photo of Jerzy Neyman and his colleagues"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"width:40%"</span><span class="dt">/&gt;</span></span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>Just like Fisher, Neyman was also impacted by Gosset. However, the</span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>influence was indirect. In the 1920s, Egon Pearson, had come across the</span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>small-sample tests that both Fisher and Gosset had popularized and had</span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>the realization that he must make a name for himself if he ever wished</span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>to be free of his father's influence.</span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "In 1925-6, I was in a state of puzzlement, and realized that, **if I</span></span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; was to continue an academic career as a mathematical statistician**,</span></span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **I must construct for myself what might be termed a statistical</span></span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; philosophy**, which would have to combine what I accepted from K. P.'s</span></span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; large- sample tradition with the newer ideas of Fisher." (7)</span></span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>Thus, he contacted Gosset about practical usage of the t-test, to which</span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>Gosset replied,</span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "Even if the chance is very small, say .00001, that doesn't in itself</span></span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; necessarily prove that the sample is not drawn randomly from the</span></span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; population </span><span class="sc">\[</span><span class="at">specified by the hypothesis</span><span class="sc">\]</span><span class="at">; **what it does is to show</span></span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; that if there is any alternative hypothesis** which will explain the</span></span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; occurrence of the sample with a more reasonable probability, say .05</span></span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; (such as that it belongs to a different population or that the sample</span></span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; wasn't random or whatever will do the trick), you will be very much</span></span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; more inclined to consider that the original hypothesis is not true."</span></span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; (E. S. Pearson, 1939.)</span></span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "In his obituary of Gosset, Pearson continues, Gosset's reply had a</span></span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; tremendous influence on the direction of my subsequent work, for the</span></span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; first paragraph contains the germ of that idea which has formed the</span></span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; basis of all the later joint researches of Neyman and myself. It is</span></span>
+<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; the simple suggestion that the only valid reason for rejecting a</span></span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; statistical hypothesis is that **some alternative explains the</span></span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; observed events with a greater degree of probability**." (7)</span></span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>As a result, Pearson decided to collaborate with someone who was not</span>
+<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>taught by his father, but who also had the mathematical abilities to</span>
+<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>create a generalizable theorem that he had in mind. Thus, began the</span>
+<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>collaboration between Neyman and Pearson.</span>
+<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>In 1928, they published a paper in *Biometrika* titled, *"On the use and</span>
+<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>interpretation of certain test criteria,"* where they introduced two</span>
+<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>kinds of errors,</span>
+<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; 1.  Sometimes,when hypothesis A is rejected, $\Sigma$ will in fact</span></span>
+<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;     have been drawn from $\Pi$.</span></span>
+<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; 2.  More often, in accepting hypothesis A, $\Sigma$ will really have</span></span>
+<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;     been drawn from </span><span class="sc">\[</span><span class="at">some alternative population</span><span class="sc">\]</span><span class="at"> $\Pi$. (31)</span></span>
+<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>As Lehmann notes, the paper was a great achievement,</span>
+<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "It introduces the consideration of alternatives, the two kinds of</span></span>
+<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; error, and the distinction between simple and composite hypotheses. In</span></span>
+<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; addition, of course, it proposes the likelihood ratio test. This test</span></span>
+<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; is intuitively appealing, and Neyman and Pearson show that in a number</span></span>
+<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; of important cases it leads to very satisfactory solutions. It has</span></span>
+<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; become the standard approach to new testing problems." (34)</span></span>
+<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; But the Neyman-Pearson lemma was still incomplete. It was between the</span></span>
+<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; years of 1930 and 1933 that Neyman had several insights into how to</span></span>
+<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; improve the theory, which Pearson already had felt satisfied with.</span></span>
+<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "In the next letter, dated March 8, Neyman suggests that he and Egon</span></span>
+<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; must "fix a certain plan, as we have lot of problems already started</span></span>
+<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; and then left in the wood." He lists several such problems, among</span></span>
+<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; them: to finish what I have started to do with the variation calculus.</span></span>
+<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; You will understand it in a moment.</span></span>
+<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; To reduce for a given level the errors of rejecting a true hypothesis,</span></span>
+<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; we may use any test. Now we want to find a test which would 1)</span></span>
+<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **reduce the probability of rejecting a true hypothesis to the level**</span></span>
+<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; $\leq \varepsilon$ and 2) **such that the probability of accepting a</span></span>
+<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; false hypothesis should be minimum**. -- We find that if such a test</span></span>
+<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; exists, then **it is the** $\lambda$-test. I am now shure </span><span class="sc">\[</span><span class="at">sic</span><span class="sc">\]</span><span class="at"> that</span></span>
+<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; in a few days I shall be ready. This will show that the "$\lambda$</span></span>
+<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; principle" is not only a principle but that **there are arguments to</span></span>
+<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; prove that it is really "the best test**."" (35)</span></span>
+<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a>These correspondences led to their 1933 paper,</span>
+<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a>*"On the Problem of the Most Efficient Tests of Statistical</span>
+<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a>Hypotheses."* in which both authors introduce the novel idea of</span>
+<span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a>behavioral guidance,</span>
+<span id="cb1-468"><a href="#cb1-468" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-469"><a href="#cb1-469" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "Without hoping to know whether each separate hypothesis is true or</span></span>
+<span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; false, **we may search for rules to govern our behavior** with regard</span></span>
+<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; to them, in following which we insure that, in the long run of</span></span>
+<span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; experience, **we shall not be too often wrong**." (36)</span></span>
+<span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-476"><a href="#cb1-476" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-477"><a href="#cb1-477" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-478"><a href="#cb1-478" aria-hidden="true" tabindex="-1"></a>As Lehmann notes,</span>
+<span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-480"><a href="#cb1-480" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-481"><a href="#cb1-481" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "After outlining the general theory, the paper in the next section</span></span>
+<span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; deals with the case of simple hypotheses and brings the statement and</span></span>
+<span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; proof of the basic result, now known as the **Neyman-Pearson</span></span>
+<span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Fundamental Lemma**. It states that for testing a simple hypothesis</span></span>
+<span id="cb1-486"><a href="#cb1-486" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; against a simple alternative, **the test that at a given level</span></span>
+<span id="cb1-487"><a href="#cb1-487" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; maximizes the probability of rejection is the likelihood ratio test at</span></span>
+<span id="cb1-488"><a href="#cb1-488" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; that level**." (36)</span></span>
+<span id="cb1-489"><a href="#cb1-489" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-490"><a href="#cb1-490" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-491"><a href="#cb1-491" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a>Lehmann summarizes much of the collaboration with the following,</span>
+<span id="cb1-493"><a href="#cb1-493" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-494"><a href="#cb1-494" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-495"><a href="#cb1-495" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-496"><a href="#cb1-496" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "The collaboration falls into two quite distinct parts. In the early</span></span>
+<span id="cb1-497"><a href="#cb1-497" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; stages, the important ideas, including in particular that of the</span></span>
+<span id="cb1-498"><a href="#cb1-498" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; likelihood ratio principle, all come from Pearson. In fact, Neyman</span></span>
+<span id="cb1-499"><a href="#cb1-499" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; frequency misunderstands them, and continually tries to interpret them</span></span>
+<span id="cb1-500"><a href="#cb1-500" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; in terms of inverse probability.</span></span>
+<span id="cb1-501"><a href="#cb1-501" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-502"><a href="#cb1-502" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; On the other hand, Pearson is sold on the likelihood ratio principle,</span></span>
+<span id="cb1-503"><a href="#cb1-503" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; which is intuitively appealing and which seems to give reasonable</span></span>
+<span id="cb1-504"><a href="#cb1-504" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; solutions in the cases on which they try it out. But for Neyman, as he</span></span>
+<span id="cb1-505"><a href="#cb1-505" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; is gradually catching on, intuitive appeal is not enough. If the</span></span>
+<span id="cb1-506"><a href="#cb1-506" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; principle is really as good as it appears to be, there ought to be</span></span>
+<span id="cb1-507"><a href="#cb1-507" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; logical justification.</span></span>
+<span id="cb1-508"><a href="#cb1-508" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-509"><a href="#cb1-509" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; And then one day in early 1930, he sees the light. Since there are two</span></span>
+<span id="cb1-510"><a href="#cb1-510" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; sources of error, one of which is being controlled, the best test is</span></span>
+<span id="cb1-511"><a href="#cb1-511" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; the one minimizing the other one. And from then on, it is Neyman who</span></span>
+<span id="cb1-512"><a href="#cb1-512" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; has the new ideas and Pearson is the reluctant follower. Neyman</span></span>
+<span id="cb1-513"><a href="#cb1-513" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; formulates, and shortly thereafter proves, the Fundamental Lemma and</span></span>
+<span id="cb1-514"><a href="#cb1-514" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; realizes that in some special cases there exist what they later call</span></span>
+<span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; uniformly most powerful tests. These turn out to coincide with the</span></span>
+<span id="cb1-516"><a href="#cb1-516" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; likelihood ratio tests." (39)</span></span>
+<span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-519"><a href="#cb1-519" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a><span class="fu"># The Fallout Between The Creators Of Classical Statistics</span></span>
+<span id="cb1-521"><a href="#cb1-521" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-522"><a href="#cb1-522" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-523"><a href="#cb1-523" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-524"><a href="#cb1-524" aria-hidden="true" tabindex="-1"></a>The conflict between Neyman and Fisher is well known, however, very few</span>
+<span id="cb1-525"><a href="#cb1-525" aria-hidden="true" tabindex="-1"></a>are able to accurately point out what lead to each individual strongly</span>
+<span id="cb1-526"><a href="#cb1-526" aria-hidden="true" tabindex="-1"></a>detesting the other.</span>
+<span id="cb1-527"><a href="#cb1-527" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a>In fact, early correspondences between Neyman and Fisher showed that</span>
+<span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a>they were incredibly friendly towards one another. In 1932, Neyman asked</span>
+<span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a>Fisher to review their 1933 paper before they submitted it, to which</span>
+<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a>Fisher replied,</span>
+<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "I should be very much interested to see your paper on "the best</span></span>
+<span id="cb1-536"><a href="#cb1-536" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; tests," as the whole question of tests of significance seems to me to</span></span>
+<span id="cb1-537"><a href="#cb1-537" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; be of immense philosophical importance, and the work you showed me was</span></span>
+<span id="cb1-538"><a href="#cb1-538" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; surely of great promise. It is quite probable that if the work is</span></span>
+<span id="cb1-539"><a href="#cb1-539" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; submitted to the Royal Society, I might be asked to act as referee,</span></span>
+<span id="cb1-540"><a href="#cb1-540" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; and in that case I shall certainly not refuse." (45)</span></span>
+<span id="cb1-541"><a href="#cb1-541" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-542"><a href="#cb1-542" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-543"><a href="#cb1-543" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-544"><a href="#cb1-544" aria-hidden="true" tabindex="-1"></a>Fisher not only read the paper, but read it so carefully that he was</span>
+<span id="cb1-545"><a href="#cb1-545" aria-hidden="true" tabindex="-1"></a>able to catch a mathematical error and point it out to Neyman and</span>
+<span id="cb1-546"><a href="#cb1-546" aria-hidden="true" tabindex="-1"></a>Pearson before it was published,</span>
+<span id="cb1-547"><a href="#cb1-547" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-548"><a href="#cb1-548" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-549"><a href="#cb1-549" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-550"><a href="#cb1-550" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "When the paper appeared in 1933, the omission was corrected, and a</span></span>
+<span id="cb1-551"><a href="#cb1-551" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; footnote acknowledged that, "We are indebted to Dr.&nbsp;R. A. Fisher -- for</span></span>
+<span id="cb1-552"><a href="#cb1-552" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; kindly calling our attention to the fact that we had originally</span></span>
+<span id="cb1-553"><a href="#cb1-553" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; omitted to refer to this restriction." (46)</span></span>
+<span id="cb1-554"><a href="#cb1-554" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-555"><a href="#cb1-555" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-556"><a href="#cb1-556" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-557"><a href="#cb1-557" aria-hidden="true" tabindex="-1"></a>Neyman thanked Fisher for his help,</span>
+<span id="cb1-558"><a href="#cb1-558" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-559"><a href="#cb1-559" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-560"><a href="#cb1-560" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-561"><a href="#cb1-561" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Neyman: "Pearson writes that you have recommended our paper for</span></span>
+<span id="cb1-562"><a href="#cb1-562" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; publication. Although it maybe considered ridiculous to thank a judge,</span></span>
+<span id="cb1-563"><a href="#cb1-563" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; I have intense feeling of gratefulness, which I hope you will kindly</span></span>
+<span id="cb1-564"><a href="#cb1-564" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; accept..." (57)</span></span>
+<span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-566"><a href="#cb1-566" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Fisher replies, "It was a great pleasure to hear from you again." (57)</span></span>
+<span id="cb1-567"><a href="#cb1-567" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-568"><a href="#cb1-568" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Neyman: "I am often thinking that it would be very useful for me to</span></span>
+<span id="cb1-569"><a href="#cb1-569" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; work with you. Unfortunately, this requires considerable amount of</span></span>
+<span id="cb1-570"><a href="#cb1-570" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; money -- without speaking of your consent -- of course..." (57)</span></span>
+<span id="cb1-571"><a href="#cb1-571" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-572"><a href="#cb1-572" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Fisher answers, "You may be sure of my consent," and in the next</span></span>
+<span id="cb1-573"><a href="#cb1-573" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; letter, "I like hearing from Poland. Best wishes for a Merry</span></span>
+<span id="cb1-574"><a href="#cb1-574" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Christmas." (58)</span></span>
+<span id="cb1-575"><a href="#cb1-575" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-576"><a href="#cb1-576" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-577"><a href="#cb1-577" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-578"><a href="#cb1-578" aria-hidden="true" tabindex="-1"></a>Unfortunately, their relationship began to degrade after the retirement</span>
+<span id="cb1-579"><a href="#cb1-579" aria-hidden="true" tabindex="-1"></a>of Karl Pearson. The department of applied statistics that he was the</span>
+<span id="cb1-580"><a href="#cb1-580" aria-hidden="true" tabindex="-1"></a>head of was split into the department of statistics, which would be led</span>
+<span id="cb1-581"><a href="#cb1-581" aria-hidden="true" tabindex="-1"></a>by his son Egon, and the department of genetics, where Fisher was</span>
+<span id="cb1-582"><a href="#cb1-582" aria-hidden="true" tabindex="-1"></a>appointed as Galton professor. Thus, Fisher, one of the creators of</span>
+<span id="cb1-583"><a href="#cb1-583" aria-hidden="true" tabindex="-1"></a>classical statistics, was not allowed to teach statistics, while in the</span>
+<span id="cb1-584"><a href="#cb1-584" aria-hidden="true" tabindex="-1"></a>floor downstairs, Egon Pearson (a man that he was surely not fond of)</span>
+<span id="cb1-585"><a href="#cb1-585" aria-hidden="true" tabindex="-1"></a>was leading the new statistics department.</span>
+<span id="cb1-586"><a href="#cb1-586" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-587"><a href="#cb1-587" aria-hidden="true" tabindex="-1"></a>This change in tone could be seen by the correspondence between Neyman</span>
+<span id="cb1-588"><a href="#cb1-588" aria-hidden="true" tabindex="-1"></a>and Fisher following Fisher's appointment as Galton professor,</span>
+<span id="cb1-589"><a href="#cb1-589" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-590"><a href="#cb1-590" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-591"><a href="#cb1-591" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-592"><a href="#cb1-592" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "Dr.&nbsp;Pearson writes me that soon you will be Galton Professor at the</span></span>
+<span id="cb1-593"><a href="#cb1-593" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; University College, London. Very probably **this means a general</span></span>
+<span id="cb1-594"><a href="#cb1-594" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; reorganization of the Department of Applied Statistics and possibly</span></span>
+<span id="cb1-595"><a href="#cb1-595" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; new people will be needed**. I know that there are many statisticians</span></span>
+<span id="cb1-596"><a href="#cb1-596" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; in England and that many of them would be willing to work under you.</span></span>
+<span id="cb1-597"><a href="#cb1-597" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; But improbable things do happen sometimes and you may have a vacant</span></span>
+<span id="cb1-598"><a href="#cb1-598" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; position in your laboratory. In that case please consider whether I</span></span>
+<span id="cb1-599"><a href="#cb1-599" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; can be of any use." (58)</span></span>
+<span id="cb1-600"><a href="#cb1-600" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-601"><a href="#cb1-601" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-602"><a href="#cb1-602" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-603"><a href="#cb1-603" aria-hidden="true" tabindex="-1"></a>Fisher replies,</span>
+<span id="cb1-604"><a href="#cb1-604" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-605"><a href="#cb1-605" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-606"><a href="#cb1-606" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-607"><a href="#cb1-607" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "Many thanks for your letter of congratulation. You will be interested</span></span>
+<span id="cb1-608"><a href="#cb1-608" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; to hear that the **Dept. of Statistics has now been separated</span></span>
+<span id="cb1-609"><a href="#cb1-609" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; officially from the Galton Laboratory**. I think Egon Pearson is</span></span>
+<span id="cb1-610"><a href="#cb1-610" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; designated as Reader in Statistics. This arrangement will be much</span></span>
+<span id="cb1-611"><a href="#cb1-611" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; laughed at, but it will be rather a poor joke, I fancy, for both</span></span>
+<span id="cb1-612"><a href="#cb1-612" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Pearson and myself. I think, however, we will make the best of it.</span></span>
+<span id="cb1-613"><a href="#cb1-613" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-614"><a href="#cb1-614" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **I shall not lecture on statistics, but probably on "the logic of</span></span>
+<span id="cb1-615"><a href="#cb1-615" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; experimentation,**" so that my lectures will not be troubled by</span></span>
+<span id="cb1-616"><a href="#cb1-616" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; students who cannot see through a wire fence. I wish I had a fine</span></span>
+<span id="cb1-617"><a href="#cb1-617" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; place for you, but it will be long before my new department can be</span></span>
+<span id="cb1-618"><a href="#cb1-618" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; given any sort of unity and coherence, and you will be head of a</span></span>
+<span id="cb1-619"><a href="#cb1-619" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; faculty before I shall be able to get much done. **If in England, do</span></span>
+<span id="cb1-620"><a href="#cb1-620" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; not fail to see me at University College**." (58)</span></span>
+<span id="cb1-621"><a href="#cb1-621" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-622"><a href="#cb1-622" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-623"><a href="#cb1-623" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-624"><a href="#cb1-624" aria-hidden="true" tabindex="-1"></a>Of course, there is little doubt that both Karl and Egon Pearson</span>
+<span id="cb1-625"><a href="#cb1-625" aria-hidden="true" tabindex="-1"></a>contributed to the fallout between Neyman and Fisher. In 1929, Egon</span>
+<span id="cb1-626"><a href="#cb1-626" aria-hidden="true" tabindex="-1"></a>Pearson had submitted a critical review of the second edition of</span>
+<span id="cb1-627"><a href="#cb1-627" aria-hidden="true" tabindex="-1"></a>*Statistical Methods For Research Workers* to *Nature*,</span>
+<span id="cb1-628"><a href="#cb1-628" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-629"><a href="#cb1-629" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-630"><a href="#cb1-630" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-631"><a href="#cb1-631" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "There is one criticism, however, which must be made from the</span></span>
+<span id="cb1-632"><a href="#cb1-632" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; statistical point of view. A large number of the tests developed are</span></span>
+<span id="cb1-633"><a href="#cb1-633" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; based...on the assumption that the population sampled is of the "normal"</span></span>
+<span id="cb1-634"><a href="#cb1-634" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; form. That this is the case may be gathered from a careful reading of</span></span>
+<span id="cb1-635"><a href="#cb1-635" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; the text, but the point is not sufficiently emphasized.</span></span>
+<span id="cb1-636"><a href="#cb1-636" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-637"><a href="#cb1-637" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; It does not appear reasonable to lay stress on the "exactness" of the</span></span>
+<span id="cb1-638"><a href="#cb1-638" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; tests when no means whatever are given of appreciating how rapidly</span></span>
+<span id="cb1-639"><a href="#cb1-639" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; they become inexact as the population sampled diverges from normality.</span></span>
+<span id="cb1-640"><a href="#cb1-640" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; That the tests, for example, connected with the analysis of variance</span></span>
+<span id="cb1-641"><a href="#cb1-641" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; are far more dependent on normality than those involving Student's z</span></span>
+<span id="cb1-642"><a href="#cb1-642" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; (or t) distribution is almost certain, but no clear indication of the</span></span>
+<span id="cb1-643"><a href="#cb1-643" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; need for caution in their application is given." (22)</span></span>
+<span id="cb1-644"><a href="#cb1-644" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-645"><a href="#cb1-645" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-646"><a href="#cb1-646" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-647"><a href="#cb1-647" aria-hidden="true" tabindex="-1"></a>As Lehmann points out, Fisher was deeply offended by this review. Nearly</span>
+<span id="cb1-648"><a href="#cb1-648" aria-hidden="true" tabindex="-1"></a>six years later (1935), Neyman encountered a similar reaction when he</span>
+<span id="cb1-649"><a href="#cb1-649" aria-hidden="true" tabindex="-1"></a>submitted a paper titled, "Statistical problems in agricultural</span>
+<span id="cb1-650"><a href="#cb1-650" aria-hidden="true" tabindex="-1"></a>experimentation" pointing out problems with some of the concepts that</span>
+<span id="cb1-651"><a href="#cb1-651" aria-hidden="true" tabindex="-1"></a>Fisher had introduced in his book, *The Design of Experiments*. Fisher</span>
+<span id="cb1-652"><a href="#cb1-652" aria-hidden="true" tabindex="-1"></a>was furious,</span>
+<span id="cb1-653"><a href="#cb1-653" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-654"><a href="#cb1-654" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-655"><a href="#cb1-655" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-656"><a href="#cb1-656" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "I had hoped that Dr.&nbsp;Neyman's paper would be on a subject with which</span></span>
+<span id="cb1-657"><a href="#cb1-657" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; the author was fully acquainted, and on which he could speak with</span></span>
+<span id="cb1-658"><a href="#cb1-658" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; authority, as in the case of his address to the Society delivered last</span></span>
+<span id="cb1-659"><a href="#cb1-659" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; summer. Since seeing the paper, **I have come to the conclusion that</span></span>
+<span id="cb1-660"><a href="#cb1-660" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Dr.&nbsp;Neyman had been somewhat unwise in his choice of topics**... (59)</span></span>
+<span id="cb1-661"><a href="#cb1-661" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-662"><a href="#cb1-662" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Were it not for the persistent effort which Dr.&nbsp;Neyman and Dr.&nbsp;Pearson</span></span>
+<span id="cb1-663"><a href="#cb1-663" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; had made to treat what they speak of as problems of estimation, by</span></span>
+<span id="cb1-664"><a href="#cb1-664" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; means merely of tests of significance, I have no doubt that Dr.&nbsp;Neyman</span></span>
+<span id="cb1-665"><a href="#cb1-665" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; would not have been in any danger of falling into the series of</span></span>
+<span id="cb1-666"><a href="#cb1-666" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; misunderstandings which his paper revealed." (59)</span></span>
+<span id="cb1-667"><a href="#cb1-667" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-668"><a href="#cb1-668" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-669"><a href="#cb1-669" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-670"><a href="#cb1-670" aria-hidden="true" tabindex="-1"></a>Correspondences from there on out had become hostile,</span>
+<span id="cb1-671"><a href="#cb1-671" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-672"><a href="#cb1-672" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-673"><a href="#cb1-673" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-674"><a href="#cb1-674" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "Neyman later (Reid 1982, p.&nbsp;126) recalls that a week after this</span></span>
+<span id="cb1-675"><a href="#cb1-675" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; meeting, Fisher stopped by his room at University College:</span></span>
+<span id="cb1-676"><a href="#cb1-676" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-677"><a href="#cb1-677" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; And he said to me that he and I are in the same building... . That, as I</span></span>
+<span id="cb1-678"><a href="#cb1-678" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; know, he had published a book -- and that's Statistical Methods for</span></span>
+<span id="cb1-679"><a href="#cb1-679" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Research Workers -- and he is upstairs from me so he knows something</span></span>
+<span id="cb1-680"><a href="#cb1-680" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; about my lectures -- that from time to time I mention his ideas, this</span></span>
+<span id="cb1-681"><a href="#cb1-681" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; and that -- and that this would be quite appropriate if I were not here</span></span>
+<span id="cb1-682"><a href="#cb1-682" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; in the College but, say, in California -- but if I am going to be at</span></span>
+<span id="cb1-683"><a href="#cb1-683" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; University College, then this is not acceptable to him.</span></span>
+<span id="cb1-684"><a href="#cb1-684" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-685"><a href="#cb1-685" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **And then I said, "*Do you mean that if I am here, I should just</span></span>
+<span id="cb1-686"><a href="#cb1-686" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; lecture using your book*?" And then he gave an affirmative answer. And</span></span>
+<span id="cb1-687"><a href="#cb1-687" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; I said, "*Sorry, no. I cannot promise that*." And then he said,</span></span>
+<span id="cb1-688"><a href="#cb1-688" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "*Well, if so, then from now on I shall oppose you in all my</span></span>
+<span id="cb1-689"><a href="#cb1-689" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; capacities*."**</span></span>
+<span id="cb1-690"><a href="#cb1-690" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-691"><a href="#cb1-691" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Reid also reports (p.&nbsp;124) that, After the Royal Statistical Society</span></span>
+<span id="cb1-692"><a href="#cb1-692" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; meeting of March 28, relations between workers on the two floors of K.</span></span>
+<span id="cb1-693"><a href="#cb1-693" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; P.'s old preserve became openly hostile. One evening, late that</span></span>
+<span id="cb1-694"><a href="#cb1-694" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; spring, Neyman and Pearson returned to their department after dinner</span></span>
+<span id="cb1-695"><a href="#cb1-695" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; to do some work.</span></span>
+<span id="cb1-696"><a href="#cb1-696" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-697"><a href="#cb1-697" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Entering, they were startled to find **strewn on the floor the wooden</span></span>
+<span id="cb1-698"><a href="#cb1-698" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; models which Neyman had used to illustrate his talk on the relative</span></span>
+<span id="cb1-699"><a href="#cb1-699" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; advantages of randomized blocks and Latin squares**. They were</span></span>
+<span id="cb1-700"><a href="#cb1-700" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; regularly kept in a cupboard in the laboratory. Both Neyman and</span></span>
+<span id="cb1-701"><a href="#cb1-701" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Pearson always believed that the models were removed by Fisher in a</span></span>
+<span id="cb1-702"><a href="#cb1-702" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; fit of anger." (59)</span></span>
+<span id="cb1-703"><a href="#cb1-703" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-704"><a href="#cb1-704" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-705"><a href="#cb1-705" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-706"><a href="#cb1-706" aria-hidden="true" tabindex="-1"></a><span class="fu"># There Is No One Neyman Nor One Fisher</span></span>
+<span id="cb1-707"><a href="#cb1-707" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-708"><a href="#cb1-708" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-709"><a href="#cb1-709" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-710"><a href="#cb1-710" aria-hidden="true" tabindex="-1"></a>When Fisher released his first edition of *Statistical Methods For</span>
+<span id="cb1-711"><a href="#cb1-711" aria-hidden="true" tabindex="-1"></a>Research Workers* (SMRW), he recommended 5% or 1% as good choices for</span>
+<span id="cb1-712"><a href="#cb1-712" aria-hidden="true" tabindex="-1"></a>significance levels, with the latter being used when a "more stringent</span>
+<span id="cb1-713"><a href="#cb1-713" aria-hidden="true" tabindex="-1"></a>requirement was necessary." Fisher was also not interested in exact</span>
+<span id="cb1-714"><a href="#cb1-714" aria-hidden="true" tabindex="-1"></a>P-values as pointed out in the section discussing his contributions.</span>
+<span id="cb1-715"><a href="#cb1-715" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-716"><a href="#cb1-716" aria-hidden="true" tabindex="-1"></a>Many of these views changed as he released later editions of his SMRW</span>
+<span id="cb1-717"><a href="#cb1-717" aria-hidden="true" tabindex="-1"></a>and his new book, *Statistical Methods for Scientific Inference* (SMSI).</span>
+<span id="cb1-718"><a href="#cb1-718" aria-hidden="true" tabindex="-1"></a>For example, he no longer recommended a particular level of</span>
+<span id="cb1-719"><a href="#cb1-719" aria-hidden="true" tabindex="-1"></a>significance,</span>
+<span id="cb1-720"><a href="#cb1-720" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-721"><a href="#cb1-721" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-722"><a href="#cb1-722" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-723"><a href="#cb1-723" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "In his late, 1956, book SMSI, Fisher protested that "**no scientific</span></span>
+<span id="cb1-724"><a href="#cb1-724" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; worker has a fixed level of significance at which from year to year,</span></span>
+<span id="cb1-725"><a href="#cb1-725" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; and in all circumstances, he rejects hypotheses; he rather gives his</span></span>
+<span id="cb1-726"><a href="#cb1-726" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; mind to each particular case, and his ideas**" (52)</span></span>
+<span id="cb1-727"><a href="#cb1-727" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-728"><a href="#cb1-728" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-729"><a href="#cb1-729" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-730"><a href="#cb1-730" aria-hidden="true" tabindex="-1"></a>In the 13th edition of SMRW he stated,</span>
+<span id="cb1-731"><a href="#cb1-731" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-732"><a href="#cb1-732" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-733"><a href="#cb1-733" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-734"><a href="#cb1-734" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "**The actual value of P obtainable from the table by interpolation</span></span>
+<span id="cb1-735"><a href="#cb1-735" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; indicates the strength of the evidence against the hypothesis**. A</span></span>
+<span id="cb1-736"><a href="#cb1-736" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; value of $\chi{2}$ exceeding the 5 per cent. point is seldom to be</span></span>
+<span id="cb1-737"><a href="#cb1-737" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; disregarded." (52)</span></span>
+<span id="cb1-738"><a href="#cb1-738" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-739"><a href="#cb1-739" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-740"><a href="#cb1-740" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-741"><a href="#cb1-741" aria-hidden="true" tabindex="-1"></a>Thus, Fisher had changed his mind on the topic.</span>
+<span id="cb1-742"><a href="#cb1-742" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-743"><a href="#cb1-743" aria-hidden="true" tabindex="-1"></a>Neyman too had a significant change of mind during the course of his</span>
+<span id="cb1-744"><a href="#cb1-744" aria-hidden="true" tabindex="-1"></a>collaboration with Pearson. At first, he constantly defaulted to inverse</span>
+<span id="cb1-745"><a href="#cb1-745" aria-hidden="true" tabindex="-1"></a>probability methods, as noted by Pearson's letter to him in 1978,</span>
+<span id="cb1-746"><a href="#cb1-746" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-747"><a href="#cb1-747" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-748"><a href="#cb1-748" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-749"><a href="#cb1-749" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "I have eight letters which you wrote to me during February and March</span></span>
+<span id="cb1-750"><a href="#cb1-750" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; 1929, trying to persuade me to put my name as a joint author. But you</span></span>
+<span id="cb1-751"><a href="#cb1-751" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; had introduced an a priori law of probability..., and I was not willing</span></span>
+<span id="cb1-752"><a href="#cb1-752" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; to start from this basis. True we had given the inverse probability as</span></span>
+<span id="cb1-753"><a href="#cb1-753" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; an alternative approach in our 1928 Part I paper, but I must in</span></span>
+<span id="cb1-754"><a href="#cb1-754" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; 1927-28 still have been ready to concede to your line of thought.</span></span>
+<span id="cb1-755"><a href="#cb1-755" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-756"><a href="#cb1-756" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; However, **by 1929 I had come down firmly to agree with Fisher that</span></span>
+<span id="cb1-757"><a href="#cb1-757" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; prior distributions should not be used**, except in cases where they</span></span>
+<span id="cb1-758"><a href="#cb1-758" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; were based on real knowledge, e.g., in some Mendelian problems. **You</span></span>
+<span id="cb1-759"><a href="#cb1-759" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; were disappointed, but accepted my decision**; after all, the whole</span></span>
+<span id="cb1-760"><a href="#cb1-760" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; mathematical development in the paper was yours." (42)</span></span>
+<span id="cb1-761"><a href="#cb1-761" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-762"><a href="#cb1-762" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-763"><a href="#cb1-763" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-764"><a href="#cb1-764" aria-hidden="true" tabindex="-1"></a>Though eventually Neyman abandoned his interest in inverse probability</span>
+<span id="cb1-765"><a href="#cb1-765" aria-hidden="true" tabindex="-1"></a>and became a serious critic,</span>
+<span id="cb1-766"><a href="#cb1-766" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-767"><a href="#cb1-767" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-768"><a href="#cb1-768" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-769"><a href="#cb1-769" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "His conviction of the inapplicability of the inverse method had by</span></span>
+<span id="cb1-770"><a href="#cb1-770" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; then become a fundamental part of his statistical philosophy, **from</span></span>
+<span id="cb1-771"><a href="#cb1-771" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; which he never wavered**." (42)</span></span>
+<span id="cb1-772"><a href="#cb1-772" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-773"><a href="#cb1-773" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-774"><a href="#cb1-774" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-775"><a href="#cb1-775" aria-hidden="true" tabindex="-1"></a>Although this post is mainly fixated on the book by Lehmann, I would</span>
+<span id="cb1-776"><a href="#cb1-776" aria-hidden="true" tabindex="-1"></a>like to at least paste this one relevant passage from [Hulbert &amp;</span>
+<span id="cb1-777"><a href="#cb1-777" aria-hidden="true" tabindex="-1"></a>Lombardi,</span>
+<span id="cb1-778"><a href="#cb1-778" aria-hidden="true" tabindex="-1"></a>2009](https://www.jstor.org/stable/23736900),<span class="sc">\[</span>@Hurlbert2009-ks<span class="sc">\]</span></span>
+<span id="cb1-779"><a href="#cb1-779" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-780"><a href="#cb1-780" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-781"><a href="#cb1-781" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-782"><a href="#cb1-782" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "In a later philosophical essay, Neyman (1977: 112) recounted their</span></span>
+<span id="cb1-783"><a href="#cb1-783" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; cloud-seeding studies, and labeled P values of 0.09, 0.03, and </span><span class="sc">\&lt;</span><span class="at"> 0.01</span></span>
+<span id="cb1-784"><a href="#cb1-784" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; reported in their earlier paper (Lovasich et al.&nbsp;1971), as</span></span>
+<span id="cb1-785"><a href="#cb1-785" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "approximately significant," "significant," and "highly significant,"</span></span>
+<span id="cb1-786"><a href="#cb1-786" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; respectively. The dichotomies of the paleoFisherian and</span></span>
+<span id="cb1-787"><a href="#cb1-787" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Neyman-Pearsonian frameworks were quietly admitted to be less</span></span>
+<span id="cb1-788"><a href="#cb1-788" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; appropriate than more nebulous interpretations --- at least in cloud</span></span>
+<span id="cb1-789"><a href="#cb1-789" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; work!</span></span>
+<span id="cb1-790"><a href="#cb1-790" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb1-791"><a href="#cb1-791" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Indeed, Cox (2006a: 43, 195) has noted that "the differences between</span></span>
+<span id="cb1-792"><a href="#cb1-792" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Fisher and Neyman ... were not nearly as great as the asperity of the</span></span>
+<span id="cb1-793"><a href="#cb1-793" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; arguments between them might suggest ... </span><span class="sc">\[</span><span class="at">and in</span><span class="sc">\]</span><span class="at"> actual practice ...</span></span>
+<span id="cb1-794"><a href="#cb1-794" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Neyman ... often reported p-values whereas some of Fisher's use of</span></span>
+<span id="cb1-795"><a href="#cb1-795" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; tests ... was much more dichotomous"!</span></span>
+<span id="cb1-796"><a href="#cb1-796" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-797"><a href="#cb1-797" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-798"><a href="#cb1-798" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-799"><a href="#cb1-799" aria-hidden="true" tabindex="-1"></a>As we can see from a summary of Lehmann's book, the individuals who</span>
+<span id="cb1-800"><a href="#cb1-800" aria-hidden="true" tabindex="-1"></a>founded classical statistics were skilled and talented individuals who</span>
+<span id="cb1-801"><a href="#cb1-801" aria-hidden="true" tabindex="-1"></a>were also complex and had various reasons for doing what they did. I</span>
+<span id="cb1-802"><a href="#cb1-802" aria-hidden="true" tabindex="-1"></a>hope this blog post encourages readers to fully dive into Lehmann's book</span>
+<span id="cb1-803"><a href="#cb1-803" aria-hidden="true" tabindex="-1"></a>where he gives a far more detailed account of Fisher and Neyman's</span>
+<span id="cb1-804"><a href="#cb1-804" aria-hidden="true" tabindex="-1"></a>contributions to classical statistics.</span>
+<span id="cb1-805"><a href="#cb1-805" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-806"><a href="#cb1-806" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-807"><a href="#cb1-807" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-808"><a href="#cb1-808" aria-hidden="true" tabindex="-1"></a><span class="fu"># References</span></span>
+<span id="cb1-809"><a href="#cb1-809" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-810"><a href="#cb1-810" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2025, Less Likely</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/zadrafi/lesslikely/edit/main/posts/statistics/classical-lehmann.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/zadrafi/lesslikely/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/Lester_Domes">
+      <i class="bi bi-twitter" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/yourusername">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

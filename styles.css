@@ -1,0 +1,230 @@
+/* css styles */
+/* Bootstrap-like utilities */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* PWA and mobile optimizations */
+@media (max-width: 768px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+}
+
+/* Code highlighting improvements */
+pre.sourceCode {
+  position: relative;
+  overflow: visible;
+}
+
+pre.sourceCode:before {
+  content: attr(data-language);
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  padding: 2px 8px;
+  background: var(--bs-primary);
+  color: white;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Search functionality styling */
+.aa-Autocomplete {
+  width: 100%;
+}
+
+.aa-Form {
+  width: 100%;
+}
+
+.aa-InputWrapper {
+  position: relative;
+}
+
+/* Social links */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.social-links a {
+  color: var(--bs-secondary);
+  font-size: 1.5rem;
+  transition: color 0.2s;
+}
+
+.social-links a:hover {
+  color: var(--bs-primary);
+}
+
+/* Blog Listing Enhancements */
+.quarto-listing {
+  margin-top: 2rem;
+}
+
+/* Category cloud styling */
+.category-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 2rem 0;
+  justify-content: center;
+}
+
+.category-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: #f0f0f0;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #495057;
+  transition: all 0.2s;
+  border: 1px solid #dee2e6;
+}
+
+.category-tag:hover {
+  background: #007bff;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Grid view improvements */
+.quarto-listing-category .category {
+  background-color: #007bff;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  margin-right: 0.3rem;
+}
+
+/* Default listing improvements */
+.quarto-listing.quarto-listing-container-default {
+  border-left: 3px solid transparent;
+  padding-left: 1rem;
+  transition: all 0.2s;
+}
+
+.quarto-listing.quarto-listing-container-default:hover {
+  border-left-color: #007bff;
+  background: #f8f9fa;
+}
+
+/* Table listing improvements */
+.quarto-listing-container-table table {
+  font-size: 0.95rem;
+}
+
+.quarto-listing-container-table tbody tr:hover {
+  background-color: #f8f9fa !important;
+  cursor: pointer;
+}
+
+/* Listing metadata */
+.listing-date,
+.listing-author,
+.listing-reading-time {
+  color: #6c757d;
+  font-size: 0.875rem;
+}
+
+.listing-reading-time::before {
+  content: "📖 ";
+}
+
+/* Category filter UI */
+.quarto-listing-filter {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.quarto-listing-filter .filter-text {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+}
+
+/* Sort UI */
+.quarto-listing-sort {
+  margin-bottom: 1rem;
+}
+
+.quarto-listing-sort select {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  background: white;
+}
+
+/* Pagination */
+.pagination {
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.page-link {
+  color: #007bff;
+  border-radius: 4px;
+  margin: 0 2px;
+}
+
+.page-item.active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Image thumbnails in listings */
+.thumbnail img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .category-tag {
+    background: #2d2d2d;
+    color: #e0e0e0;
+    border-color: #404040;
+  }
+
+  .category-tag:hover {
+    background: #0056b3;
+  }
+
+  .quarto-listing-filter {
+    background: #1a1a1a;
+  }
+
+  .quarto-listing-filter .filter-text,
+  .quarto-listing-sort select {
+    background: #2d2d2d;
+    border-color: #404040;
+    color: #e0e0e0;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .quarto-listing-container-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .category-cloud {
+    justify-content: flex-start;
+  }
+}
